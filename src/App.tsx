@@ -1,9 +1,10 @@
-import { Button, ButtonGroup } from "@chakra-ui/react";
+import React from "react";
+import NavBar from "./components/NavBar";
 function App() {
 	return (
-		<div className="container-fluid bg-primary">
+		<div className="container-fluid">
 			<div className="row">
-				<div className="col bg-secondary">Nav</div>
+				<NavBar />
 			</div>
 			<div className="row">
 				<div className="col-lg-6 bg-info">Aside</div>
