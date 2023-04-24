@@ -4,13 +4,14 @@ import Theme from "./components/Theme";
 import GameGrid from "./components/GameGrid";
 function App() {
 	const [darkMode, setDarkMode] = useState(true);
+
 	const darkModeOff = () => {
 		setDarkMode(!darkMode);
 	};
 
 	return (
 		<div
-			className="container-fluid h-100 w-100 p-5"
+			className="container-fluid container-img w-100 p-5"
 			style={{ backgroundColor: darkMode ? "rgba(0,0,0,.9)" : "#fff", color: darkMode ? "#fff" : "rgba(0, 0, 0, .8)", transition: "all .7s" }}>
 			<div className="d-flex align-items-center justify-content-between	">
 				<NavBar />

@@ -20,7 +20,7 @@ const GameCard = ({ game, darkMode }: Props) => {
 					<div className="d-flex justify-content-between pe-5 ps-3 pb-5">
 						<div className="card-text fs-4">
 							{game.parent_platforms.map(({ platform }) => (
-								<GameName key={platform.id} gameName={platform.name} />
+								<GameName key={platform.id} gameName={platform.name} darkMode={darkMode} />
 							))}
 						</div>
 						<CriticScore metacritics={game.metacritic} darkMode={darkMode} />

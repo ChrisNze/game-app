@@ -5,9 +5,10 @@ import { BsGlobe } from "react-icons/bs";
 
 interface GameName {
 	gameName: string;
+	darkMode: boolean;
 }
 
-const GameName = ({ gameName }: GameName) => {
+const GameName = ({ gameName, darkMode }: GameName) => {
 	let game_Name;
 	if (gameName === "PC") {
 		game_Name = <FaWindows />;
@@ -29,7 +30,11 @@ const GameName = ({ gameName }: GameName) => {
 		game_Name = <MdPhoneIphone />;
 	}
 
-	return <i className="p-1 game_icon">{game_Name}</i>;
+	return (
+		<i className="p-1 game_icon" style={{ color: darkMode ? "rgba(256, 256, 256, 0.5)" : "rgba(0, 0, 0, 0.7)" }}>
+			{game_Name}
+		</i>
+	);
 };
 
 export default GameName;

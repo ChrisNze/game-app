@@ -1,15 +1,16 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: inherit;
+	box-sizing: border-box;
 }
 html {
 	font-size: 62.5%;
 }
 
-body {
-	box-sizing: border-box;
+.container-img {
+	min-height: 100vh;
 }
+
 .card_container {
 	border-radius: 12px !important;
 	overflow: hidden;
@@ -19,6 +20,45 @@ body {
 	background-color: rgba(111, 176, 111, 0.1) !important;
 	cursor: pointer;
 }
+
+/* BEFORE GAME LOADING STARTS */
+/* //////////////////////////////////////////////////////////////////////////////////// */
+.load_container {
+	min-height: 30rem;
+}
+
+.load {
+	min-height: 100%;
+	/* background-color: rgba(0, 0, 0, 0.2) !important; */
+	animation: animateCard 0.7s infinite;
+}
+
+.load_img {
+	min-height: 15rem;
+	background-color: #ffffff0f;
+}
+
+.load_title {
+	min-height: 2rem;
+	min-width: 10rem;
+	margin-top: 2rem;
+	background-color: #ffffff08;
+}
+
+.load_icon {
+	min-height: 1.5rem;
+	min-width: 10rem;
+	background-color: #ffffff08;
+}
+
+.load_critics {
+	min-height: 2rem;
+	min-width: 4rem;
+	background-color: #ffffff08;
+}
+
+/* BEFORE GAME LOADING ENDS */
+/* ////////////////////////////////////////////////////////////////////////////////// */
 
 .game_icon {
 	cursor: pointer;
@@ -32,3 +72,24 @@ body {
 .game_icon:active {
 	color: rgba(256, 256, 256, 0.5);
 }
+
+/* ANIMATION FOR THE CARD BEFORE GAME LOADING STARTS */
+/* //////////////////////////////////////////////////////////////// */
+
+@keyframes animateCard {
+	0% {
+		opacity: 0;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+	50% {
+		opacity: 0.5;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	100% {
+		opacity: 0;
+		background-color: rgba(0, 0, 0);
+	}
+}
+/* ANIMATION FOR THE CARD BEFORE GAME LOADING ENDS */
+/* /////////////////////////////////////////////////////////// */
