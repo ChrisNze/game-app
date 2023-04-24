@@ -10,3 +10,25 @@ html {
 body {
 	box-sizing: border-box;
 }
+.card_container {
+	border-radius: 12px !important;
+	overflow: hidden;
+}
+
+.meta_score:hover {
+	background-color: rgba(111, 176, 111, 0.1) !important;
+	cursor: pointer;
+}
+
+.game_icon {
+	cursor: pointer;
+	color: rgba(256, 256, 256, 0.5);
+}
+
+.game_icon:hover {
+	color: rgba(256, 256, 256, 0.7);
+}
+
+.game_icon:active {
+	color: rgba(256, 256, 256, 0.5);
+}

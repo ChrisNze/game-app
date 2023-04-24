@@ -1,11 +1,14 @@
 import useGame from "../hooks/useGame";
 import GameCard from "./GameCard";
+
 interface Props {
 	darkMode: boolean;
 }
 
 const GameGrid = ({ darkMode }: Props) => {
 	const { game, error } = useGame();
+	console.log(game);
+
 	return (
 		<>
 			{error && <p className="text-danger">{error}</p>}

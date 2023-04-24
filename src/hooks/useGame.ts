@@ -4,7 +4,15 @@ import apiClient, { CanceledError } from "../services/api-client";
 export interface Game {
 	id: number;
 	name: string;
+	metacritic: number;
 	background_image: string;
+	parent_platforms: {
+		platform: {
+			id: number;
+			name: string;
+			slug: string;
+		};
+	}[];
 }
 
 interface FetchGamesResponse {
