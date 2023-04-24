@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import Theme from "./components/Theme";
+import GameGrid from "./components/GameGrid";
 function App() {
 	const [darkMode, setDarkMode] = useState(true);
 	const darkModeOff = () => {
@@ -9,15 +10,17 @@ function App() {
 
 	return (
 		<div
-			className="container-fluid vh-100 "
-			style={{ backgroundColor: darkMode ? "#000" : "#fff", color: darkMode ? "#fff" : "rgba(0, 0, 0, .8)", transition: "all .7s" }}>
-			<div className="d-flex align-items-center justify-content-between">
+			className="container-fluid h-100 w-100 p-5"
+			style={{ backgroundColor: darkMode ? "rgba(0,0,0,.9)" : "#fff", color: darkMode ? "#fff" : "rgba(0, 0, 0, .8)", transition: "all .7s" }}>
+			<div className="d-flex align-items-center justify-content-between	">
 				<NavBar />
 				<Theme darkModeOff={darkModeOff} darkMode={darkMode} />
 			</div>
-			<div className="row">
-				<div className="col-lg-6 bg-info">Aside</div>
-				<div className="col-lg-6 bg-success d-none d-lg-block">Main</div>
+			<div className="row mt-5">
+				<div className="col-lg-2">Aside</div>
+				<div className="col-lg-10">
+					<GameGrid darkMode={darkMode} />
+				</div>
 			</div>
 		</div>
 	);
