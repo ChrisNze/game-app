@@ -7,6 +7,10 @@ html {
 	font-size: 62.5%;
 }
 
+#root {
+	font-size: 1.5rem;
+}
+
 .container-img {
 	min-height: 100vh;
 }
@@ -29,8 +33,11 @@ html {
 
 .load {
 	min-height: 100%;
-	/* background-color: rgba(0, 0, 0, 0.2) !important; */
-	animation: animateCard 0.7s infinite;
+	animation: animateCard 0.8s infinite;
+}
+
+.genre_load {
+	animation: animateGenre 0.8s infinite;
 }
 
 .load_img {
@@ -73,6 +80,11 @@ html {
 	color: rgba(256, 256, 256, 0.5);
 }
 
+.list-group-items {
+	list-style: none;
+	padding: 5px 0;
+}
+
 /* ANIMATION FOR THE CARD BEFORE GAME LOADING STARTS */
 /* //////////////////////////////////////////////////////////////// */
 
@@ -91,5 +103,24 @@ html {
 		background-color: rgba(0, 0, 0);
 	}
 }
+
+@keyframes animateGenre {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
 /* ANIMATION FOR THE CARD BEFORE GAME LOADING ENDS */
 /* /////////////////////////////////////////////////////////// */
+
+@media (min-width: 992px) {
+	.game_container {
+		padding: 0 0 0 8rem !important;
+	}
+}

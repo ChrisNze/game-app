@@ -4,10 +4,10 @@ interface Props {
 }
 const Theme = ({ darkModeOff, darkMode }: Props) => {
 	return (
-		<div className="form-check form-switch d-flex">
-			<input className="form-check-input fs-4 me-2" type="checkbox" id="switch" onClick={darkModeOff} />
-			<label className="form-check-label fs-5" htmlFor="switch">
-				{darkMode ? "Dark Mode" : "Light Mode"}
+		<div className="form-check form-switch d-flex align-items-center fs-3">
+			<input className="form-check-input me-2" type="checkbox" id="switch" onClick={darkModeOff} style={{ cursor: "pointer" }} />
+			<label className="form-check-label" htmlFor="switch" style={{ cursor: "pointer" }}>
+				{darkMode ? "Light Mode" : "Dark Mode"}
 			</label>
 		</div>
 	);

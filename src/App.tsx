@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "./components/NavBar";
 import Theme from "./components/Theme";
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 function App() {
 	const [darkMode, setDarkMode] = useState(true);
 
@@ -11,15 +12,17 @@ function App() {
 
 	return (
 		<div
-			className="container-fluid container-img w-100 p-5"
+			className="container-fluid container-img w-100 p-2 p-sm-3 p-md-4 p-lg-5"
 			style={{ backgroundColor: darkMode ? "rgba(0,0,0,.9)" : "#fff", color: darkMode ? "#fff" : "rgba(0, 0, 0, .8)", transition: "all .7s" }}>
 			<div className="d-flex align-items-center justify-content-between	">
 				<NavBar />
 				<Theme darkModeOff={darkModeOff} darkMode={darkMode} />
 			</div>
 			<div className="row mt-5">
-				<div className="col-lg-2">Aside</div>
-				<div className="col-lg-10">
+				<div className="col-lg-1 d-none d-lg-block">
+					<GenreList />
+				</div>
+				<div className="col-lg-11 game_container">
 					<GameGrid darkMode={darkMode} />
 				</div>
 			</div>
