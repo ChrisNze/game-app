@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useGenre, { Genre } from "../hooks/useGenre";
 import GenreSkeleton from "./GenreSkeleton";
 
