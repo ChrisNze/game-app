@@ -3,8 +3,10 @@ import NavBar from "./components/NavBar";
 import Theme from "./components/Theme";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import { Genre } from "./hooks/useGenre";
 function App() {
 	const [darkMode, setDarkMode] = useState(true);
+	const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
 
 	const darkModeOff = () => {
 		setDarkMode(!darkMode);
@@ -20,10 +22,10 @@ function App() {
 			</div>
 			<div className="row mt-5">
 				<div className="col-lg-1 d-none d-lg-block">
-					<GenreList />
+					<GenreList selectedGenre={selectedGenre} onSelectGenre={(genre) => setSelectedGenre(genre)} />
 				</div>
 				<div className="col-lg-11 game_container">
-					<GameGrid darkMode={darkMode} />
+					<GameGrid darkMode={darkMode} selectedGenre={selectedGenre} />
 				</div>
 			</div>
 		</div>

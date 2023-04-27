@@ -1,7 +1,12 @@
-import useGenre from "../hooks/useGenre";
+import useGenre, { Genre } from "../hooks/useGenre";
 import GenreSkeleton from "./GenreSkeleton";
 
-const GenreList = () => {
+interface Props {
+	onSelectGenre: (genre: Genre) => void;
+	selectedGenre: Genre | null;
+}
+
+const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 	const { genre, error, loading } = useGenre();
 	const genreSkeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 	console.log(genre);
@@ -31,7 +36,12 @@ const GenreList = () => {
 			{genre.map((genre) => (
 				<li key={genre.id} className="list-group-items d-flex align-items-center pb-4" style={{ cursor: "pointer" }}>
 					<img src={genre.image_background} style={{ width: "4rem", height: "3rem", borderRadius: "8px", marginRight: "10px" }} />
-					<span className="fs-3"> {genre.name}</span>
+					<span
+						className="fs-3 genre_name"
+						onClick={() => onSelectGenre(genre)}
+						style={{ transform: genre.id === selectedGenre?.id ? "scale(1.1)" : "scale(1)" }}>
+						{genre.name}
+					</span>
 				</li>
 			))}
 		</ul>
