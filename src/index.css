@@ -177,8 +177,8 @@ html {
 /* ANIMATION FOR THE CARD BEFORE GAME LOADING ENDS */
 /* /////////////////////////////////////////////////////////// */
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
 	.game_container {
-		padding: 0 0 0 8rem !important;
+		padding: 0 0 0 10rem !important;
 	}
 }

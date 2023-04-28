@@ -35,14 +35,14 @@ function App() {
 				<Theme darkModeOff={darkModeOff} darkMode={darkMode} />
 			</div>
 			<div className="row mt-5">
-				<div className="col-lg-1 d-none d-md-block">
+				<div className="col-md-1 d-none d-md-block">
 					<GenreList
 						selectedGenre={selectedGenre}
 						onSelectGenre={(genre) => setSelectedGenre(genre)}
 						// valueChange={(value) => setGameHeading(value)}
 					/>
 				</div>
-				<div className="col-lg-11 game_container">
+				<div className="col-md-11 game_container">
 					<h1 className="mb-5 display-2 fw-bold">
 						{selectedPlatForm?.name} {selectedGenre?.name} Game
 					</h1>
