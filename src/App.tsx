@@ -44,7 +44,7 @@ function App() {
 				</div>
 				<div className="col-lg-11 game_container">
 					<h1 className="mb-5 display-2 fw-bold">
-						{selectedPlatForm?.name} {selectedGenre?.name} Games
+						{selectedPlatForm?.name} {selectedGenre?.name} Game
 					</h1>
 					<div className="">
 						<PlatFormSelector
