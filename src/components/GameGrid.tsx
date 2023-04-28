@@ -1,15 +1,22 @@
 import useGame from "../hooks/useGame";
 import { Genre } from "../hooks/useGenre";
+import { PlatForm } from "../hooks/usePlatForm";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 
 interface Props {
 	darkMode: boolean;
 	selectedGenre: Genre | null;
+	selectedPlatForm: PlatForm | null;
 }
 
-const GameGrid = ({ darkMode, selectedGenre }: Props) => {
-	const { game, error, loading } = useGame(selectedGenre, { params: { genres: selectedGenre?.id } }, [selectedGenre?.id]);
+const GameGrid = ({ darkMode, selectedGenre, selectedPlatForm }: Props) => {
+	const { game, error, loading } = useGame(
+		selectedGenre,
+		selectedPlatForm,
+		{ params: { genres: selectedGenre?.id, platforms: selectedPlatForm?.id } },
+		[selectedGenre?.id, selectedPlatForm?.id]
+	);
 	const skeleton = [1, 2, 3, 4, 5, 6, 7, 8];
 	console.log("game", game);
 

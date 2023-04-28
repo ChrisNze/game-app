@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import apiClient, { CanceledError } from "../services/api-client";
 import { Genre } from "./useGenre";
 import { AxiosRequestConfig } from "axios";
+import { PlatForm } from "./usePlatForm";
 
 export interface Game {
 	id: number;
@@ -30,7 +31,7 @@ interface FetchGamesResponse {
 	results: Game[];
 }
 
-const useGame = (selectedGenre: Genre | null, requestConfig?: AxiosRequestConfig, deps?: any[]) => {
+const useGame = (selectedGenre: Genre | null, selectedPlatForm: PlatForm | null, requestConfig?: AxiosRequestConfig, deps?: any[]) => {
 	const [loading, setLoading] = useState(false);
 	const [game, setGame] = useState<Game[]>([]);
 	const [error, setError] = useState("");

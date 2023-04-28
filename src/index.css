@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-size: 1.6rem;
 }
 html {
 	font-size: 62.5%;
@@ -101,6 +102,27 @@ html {
 	transform: scale(1);
 }
 
+.dropdown {
+	background-color: rgba(16, 16, 16, 0.7) !important;
+	display: inline-block !important;
+	border: none !important;
+	border-radius: 7px;
+}
+
+.dropdown-menu {
+	background-color: rgb(16, 16, 16) !important;
+	border-radius: 10px !important;
+}
+.dropdown-link {
+	color: #fff !important;
+}
+
+.dropdown-link:hover {
+	background-color: rgba(51, 51, 51, 0.3) !important;
+}
+.dropdown-link:active {
+	background-color: rgba(51, 51, 51, 0.8) !important;
+}
 /* ANIMATION FOR THE CARD BEFORE GAME LOADING STARTS */
 /* //////////////////////////////////////////////////////////////// */
 

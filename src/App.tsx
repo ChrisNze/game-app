@@ -4,9 +4,12 @@ import Theme from "./components/Theme";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { Genre } from "./hooks/useGenre";
+import PlatFormSelector from "./components/PlatFormSelector";
+import { PlatForm } from "./hooks/usePlatForm";
 function App() {
 	const [darkMode, setDarkMode] = useState(true);
 	const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+	const [selectedPlatForm, setSelectedPlatForm] = useState<PlatForm | null>(null);
 
 	const darkModeOff = () => {
 		setDarkMode(!darkMode);
@@ -25,7 +28,8 @@ function App() {
 					<GenreList selectedGenre={selectedGenre} onSelectGenre={(genre) => setSelectedGenre(genre)} />
 				</div>
 				<div className="col-lg-11 game_container">
-					<GameGrid darkMode={darkMode} selectedGenre={selectedGenre} />
+					<PlatFormSelector onPlatFormSelect={(platforms) => setSelectedPlatForm(platforms)} selectedPlatForm={selectedPlatForm} />
+					<GameGrid darkMode={darkMode} selectedGenre={selectedGenre} selectedPlatForm={selectedPlatForm} />
 				</div>
 			</div>
 		</div>
