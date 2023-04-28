@@ -11,7 +11,7 @@ interface Props {
 const GameCard = ({ game, darkMode }: Props) => {
 	return (
 		<>
-			<div className="col-12 col-sm-6 col-lg-3 ">
+			<div className="col-12 col-sm-6 col-lg-4 col-xl-3 ">
 				<div className="card card_container" style={{ backgroundColor: darkMode ? "rgba(0,0,0,.2)" : "transparent" }}>
 					<img src={game.background_image} className="card-img-top" alt="Image" />
 					<div className="card-body">
