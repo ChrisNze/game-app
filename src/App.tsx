@@ -35,7 +35,7 @@ function App() {
 				<Theme darkModeOff={darkModeOff} darkMode={darkMode} />
 			</div>
 			<div className="row mt-5">
-				<div className="col-lg-1 d-none d-lg-block">
+				<div className="col-lg-1 d-none d-md-block">
 					<GenreList
 						selectedGenre={selectedGenre}
 						onSelectGenre={(genre) => setSelectedGenre(genre)}
