@@ -12,8 +12,8 @@ function App() {
 	const [darkMode, setDarkMode] = useState(true);
 	const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
 	const [selectedPlatForm, setSelectedPlatForm] = useState<PlatForm | null>(null);
-	const [inputValue, setInputValue] = useState();
-	const [gameHeading, setGameHeading] = useState();
+	const [inputValue, setInputValue] = useState("");
+
 	// const [testing, setTesting] = useState();
 
 	const darkModeOff = () => {
@@ -26,7 +26,12 @@ function App() {
 			style={{ backgroundColor: darkMode ? "rgba(0,0,0,.9)" : "#fff", color: darkMode ? "#fff" : "rgba(0, 0, 0, .8)", transition: "all .7s" }}>
 			<div className="d-flex align-items-center">
 				<NavBar />
-				<SearchInput darkMode={darkMode} onSearch={(searchText) => setInputValue(searchText)} />
+				<SearchInput
+					darkMode={darkMode}
+					onSearch={(searchText) => {
+						setInputValue(searchText);
+					}}
+				/>
 				<Theme darkModeOff={darkModeOff} darkMode={darkMode} />
 			</div>
 			<div className="row mt-5">

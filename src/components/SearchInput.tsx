@@ -7,7 +7,7 @@ interface Props {
 	onSearch: (searchText: string) => void;
 }
 
-function SearchInput({ darkMode, onSearch }: Props) {
+function SearchInput({ onSearch }: Props) {
 	const ref = useRef<HTMLInputElement>(null);
 	return (
 		<Form
