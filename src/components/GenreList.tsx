@@ -10,7 +10,7 @@ interface Props {
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 	const { genre, error, loading } = useGenre();
 	const genreSkeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-	console.log(genre);
+	// console.log(genre);
 
 	if (error) {
 		return (
@@ -39,7 +39,9 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 					<img src={genre.image_background} style={{ width: "4rem", height: "3rem", borderRadius: "8px", marginRight: "10px" }} />
 					<span
 						className="fs-3 genre_name"
-						onClick={() => onSelectGenre(genre)}
+						onClick={() => {
+							onSelectGenre(genre);
+						}}
 						style={{ transform: genre.id === selectedGenre?.id ? "scale(1.1)" : "scale(1)" }}>
 						{genre.name}
 					</span>

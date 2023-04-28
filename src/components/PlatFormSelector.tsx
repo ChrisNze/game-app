@@ -21,9 +21,10 @@ function PlatFormSelector({ onPlatFormSelect, selectedPlatForm }: Props) {
 					{platForm.map((platforms) => (
 						<Dropdown.Item
 							key={platforms.id}
-							href="#/action-1"
 							className="dropdown-link fs-2 py-3 ps-4"
-							onClick={() => onPlatFormSelect(platforms)}>
+							onClick={() => {
+								onPlatFormSelect(platforms);
+							}}>
 							{platforms.name}
 						</Dropdown.Item>
 					))}
