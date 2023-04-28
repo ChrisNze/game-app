@@ -32,22 +32,28 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
 	// }
 
 	return (
-		<ul className="list-group d-flex">
-			{loading && genreSkeleton.map((genre) => <GenreSkeleton key={genre} />)}
-			{genre.map((genre) => (
-				<li key={genre.id} className="list-group-items d-flex align-items-center pb-4" style={{ cursor: "pointer" }}>
-					<img src={genre.image_background} style={{ width: "4rem", height: "3rem", borderRadius: "8px", marginRight: "10px" }} />
-					<span
-						className="fs-3 genre_name"
-						onClick={() => {
-							onSelectGenre(genre);
-						}}
-						style={{ transform: genre.id === selectedGenre?.id ? "scale(1.1)" : "scale(1)" }}>
-						{genre.name}
-					</span>
-				</li>
-			))}
-		</ul>
+		<>
+			<h1 className="display-5 mb-4">Genres</h1>
+			<ul className="list-group d-flex">
+				{loading && genreSkeleton.map((genre) => <GenreSkeleton key={genre} />)}
+				{genre.map((genre) => (
+					<li key={genre.id} className="list-group-items d-flex align-items-center pb-4" style={{ cursor: "pointer" }}>
+						<img
+							src={genre.image_background}
+							style={{ width: "4rem", height: "3rem", borderRadius: "8px", marginRight: "10px", objectFit: "cover" }}
+						/>
+						<span
+							className="fs-3 genre_name"
+							onClick={() => {
+								onSelectGenre(genre);
+							}}
+							style={{ transform: genre.id === selectedGenre?.id ? "scale(1.1)" : "scale(1)" }}>
+							{genre.name}
+						</span>
+					</li>
+				))}
+			</ul>
+		</>
 	);
 };
 
