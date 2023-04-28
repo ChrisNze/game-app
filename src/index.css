@@ -26,6 +26,26 @@ html {
 	cursor: pointer;
 }
 
+.search {
+	border: none !important;
+	outline: none !important;
+	font-size: 1.9rem !important;
+	background-color: rgba(16, 16, 16, 0.9) !important;
+	color: #fff !important;
+	padding: 10px 0 10px 40px !important;
+}
+.search:focus {
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.search-icon {
+	transform: translateX(3rem);
+	cursor: pointer;
+	color: #fff;
+}
+
 /* BEFORE GAME LOADING STARTS */
 /* //////////////////////////////////////////////////////////////////////////////////// */
 .load_container {
